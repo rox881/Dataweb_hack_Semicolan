@@ -41,7 +41,6 @@ const chatLimiter = rateLimit({
     windowMs: 60 * 1000,  // 1 minute
     max: 10,              // 10 chat requests per minute
     message: { error: 'Too many requests — slow down' },
-    keyGenerator: (req) => req.user?.id?.toString() || req.ip,
     standardHeaders: true,
     legacyHeaders: false
 });
